@@ -270,10 +270,3 @@ Artık kullanılmayan bir anahtar (ör. eski piksel tabanlı `FORGET_DISTANCE`) 
 - **Uzak kişiler:** Çok küçük kırpıntılarda ReID güvenilirliği düşer. `REID_MIN_CROP_HEIGHT` değerini 80–96 px'e çıkarmak kimlik kopmalarını azaltır.
 
 ---
-
-## Kaynaklar
-
-- [Ultralytics YOLO11](https://docs.ultralytics.com/) — nesne tespiti ve BoT-SORT uygulaması
-- Aharon vd., *BoT-SORT: Robust Associations Multi-Pedestrian Tracking*, 2022
-- Zhou vd., *Omni-Scale Feature Learning for Person Re-Identification*, ICCV 2019 (OSNet)
-- PETS 2006 / PETS 2007 — terk edilmiş bagaj tespiti veri kümeleri ve değerlendirme tanımları
