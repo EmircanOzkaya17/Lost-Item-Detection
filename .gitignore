@@ -1,0 +1,68 @@
+# =====================================================================
+#  Kayip Esya Takibi - .gitignore
+# =====================================================================
+
+# --- Python bytecode ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Sanal ortamlar ---
+.venv/
+venv/
+env/
+
+# --- Ortam degiskenleri (yerel ayarlar) ---
+# example.env repoda kalir; herkes kendi .env dosyasini ondan olusturur.
+.env
+.env.local
+
+# --- IDE ayarlari ---
+.vscode/
+.idea/
+
+# --- Isletim sistemi dosyalari ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Girdi videolari ve ciktilar (buyuk dosyalar) ---
+# Klasorlerin icerigi gonderilmez; bos klasoru repoda tutmak istersen
+# icine bir .gitkeep dosyasi koyman yeterli.
+assets/*
+!assets/.gitkeep
+results/*
+!results/.gitkeep
+
+# --- Model agirliklari ---
+# yolo11m.pt ilk calistirmada ultralytics tarafindan,
+# OSNet agirligi ise install.py ile otomatik indirilir.
+models/*
+!models/.gitkeep
+*.pt
+*.pth
+*.onnx
+*.engine
+*.torchscript
+
+# --- Video dosyalari (hangi klasorde olursa olsun) ---
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+
+# --- Loglar ---
+*.log
+
+# --- Arac onbellekleri ---
+runs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# --- Paketleme ---
+build/
+dist/
+*.egg-info/
