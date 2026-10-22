@@ -89,7 +89,7 @@ Bir uzaklaşma dönemi içinde durum geri gitmez. Durumu yalnızca sahibin dönm
 ## Proje Yapısı
 
 ```
-Kayıp Esya Takibi/
+Lost-Item-Detection/
 ├── assets/                  # Girdi videoları (repoda yok)
 ├── models/                  # OSNet ağırlıkları (install.py indirir, repoda yok)
 ├── results/                 # Çıktı videoları ve loglar (repoda yok)
@@ -108,8 +108,7 @@ Kayıp Esya Takibi/
 ├── main.py                  # Orkestrasyon + unutulan eşya kararı
 ├── install.py               # Bağımlılık kurulumu ve GPU doğrulaması
 ├── requirements.txt
-├── example.env              # Yapılandırma şablonu
-└── DEGISIKLIKLER.md         # Tasarım kararları ve değişiklik notları
+└── example.env              # Yapılandırma şablonu
 ```
 
 | Modül | Sorumluluk |
@@ -136,8 +135,8 @@ Kayıp Esya Takibi/
 ### 1. Repoyu klonlayın ve sanal ortam oluşturun
 
 ```bash
-git clone https://github.com/EmircanOzkaya17/<repo-adi>.git
-cd <repo-adi>
+git clone https://github.com/EmircanOzkaya17/Lost-Item-Detection.git
+cd Lost-Item-Detection
 
 python -m venv .venv
 # Windows
@@ -269,8 +268,6 @@ Artık kullanılmayan bir anahtar (ör. eski piksel tabanlı `FORGET_DISTANCE`) 
 - **İki kişinin ortasındaki eşya:** Baskınlık şartı sağlanmadığı için sahipsiz kalır; biri ayrılınca diğerine atanır. Yanlış alarmı önlemek için bilinçli bir ödünleşimdir.
 - **Sahipsiz eşya alarmı yok:** Sahibi hiç belirlenemeyen eşya için alarm üretilmez.
 - **Uzak kişiler:** Çok küçük kırpıntılarda ReID güvenilirliği düşer. `REID_MIN_CROP_HEIGHT` değerini 80–96 px'e çıkarmak kimlik kopmalarını azaltır.
-
-Tasarım kararlarının ayrıntıları ve yapılan değişiklikler için: [DEGISIKLIKLER.md](DEGISIKLIKLER.md)
 
 ---
 
