@@ -1,0 +1,33 @@
+# =====================================================================
+#  Unutulan Esya Tespit Sistemi - Python bagimliliklari
+# ---------------------------------------------------------------------
+#  ONEMLI: torch ve torchvision BU DOSYADA YOKTUR.
+#  GPU (CUDA) surumlerinin PyTorch'un kendi deposundan kurulmasi gerekir;
+#  PyPI'dan gelen torch Windows'ta CPU surumudur, Linux'ta ise CUDA 13
+#  surucusu ister. Bu yuzden siralama:
+#
+#    1) PyTorch (CUDA)  ->  python install.py   (otomatik secer)
+#                      veya
+#       pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+#    2) pip install -r requirements.txt
+#
+#  Ters sirada kurulursa ultralytics, bagimlilik olarak torch'un CPU
+#  surumunu ceker ve ekran karti kullanilamaz.
+# =====================================================================
+
+numpy>=1.26.0
+opencv-python>=4.9.0
+python-dotenv>=1.0.0
+
+# YOLO tespiti + BoT-SORT takibi. 8.3 ve 8.4 API'leri ile test edildi.
+ultralytics>=8.3.0,<9.0.0
+
+# BoT-SORT'un atama (macar algoritmasi) bagimliligi. Kurulu degilse
+# ultralytics calisma aninda kurmaya calisir; cevrimdisi ortamda basarisiz olur.
+lap>=0.5.12
+
+# OSNet ReID agirligini Google Drive'dan indirmek icin (install.py kullanir)
+gdown>=5.1.0
+
+# NOT: boxmot artik GEREKMEZ. OSNet projeye gomuludur (src/osnet.py).
+# boxmot 25.x hem OSNet API'sini kaldirdi hem de opencv<5 ister.
